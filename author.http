@@ -1,0 +1,72 @@
+
+###
+POST  http://localhost:4000/author-api/author
+Content-Type: application/json
+
+{
+    "userType":"author",
+    "username":"sana",
+    "password":"kavya",
+    "email":"ammu45@gmail.com"
+}
+###
+POST  http://localhost:4000/author-api/login
+Content-Type: application/json
+
+{
+    
+    "username":"sana",
+    "password":"kavya"
+    
+}
+###
+POST  http://localhost:4000/author-api/articles
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNhbmEiLCJpYXQiOjE3MTY4OTc0MzQsImV4cCI6MTcxNjk4MzgzNH0.TNfUG5iIkTrH_oyXFpjYABmpCXEkuSBggHBkUzp6iM8
+
+{
+    "articleId":"{{$timestamp}}",
+    "title":"Fundas of Mongo",
+    "category":"Programming",
+    "content":"The first popular web browser with a graphical user interface, Mosaic, was released in 1993. Accessible to non-technical people, it played a prominent role in the rapid growth of the early World Wide Web.[12] The lead developers of Mosaic then founded the Netscape corporation, which released a more polished browser, Netscape Navigator, in 1994. This quickly became the most-used.[1",
+    "dateOfCreation":"{{$datetime iso8601}}",
+    "dateOfModification":"{{$datetime iso8601}}",
+    "username":"sana",
+    "comments":[],
+    "status":true
+}
+### update article
+Put  http://localhost:4000/author-api/articles
+Content-Type: application/json
+
+{
+    "articleId":"$1716197431",
+    "title":"Fundas of JS",
+    "category":"Programming",
+    "content":"After updating:The first popular web browser with a graphical user interface, Mosaic, was released in 1993. Accessible to non-technical people, it played a prominent role in the rapid growth of the early World Wide Web.[12] The lead developers of Mosaic then founded the Netscape corporation, which released a more polished browser, Netscape Navigator, in 1994. This quickly became the most-used.[1",
+    "dateOfCreation":"2024-05-20T09:30:31.980Z",
+    "dateOfModification":"{{$datetime iso8601}}",
+    "username":"rithu",
+    "comments":[],
+    "status":true
+}
+### Soft deleted
+Put  http://localhost:4000/author-api/articles/1716971305
+Content-Type: application/json
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNhbmEiLCJpYXQiOjE3MTY4OTc0MzQsImV4cCI6MTcxNjk4MzgzNH0.TNfUG5iIkTrH_oyXFpjYABmpCXEkuSBggHBkUzp6iM8
+
+{
+    "articleId":"1716971305",
+    "title":"Fundas of Mongo",
+    "category":"Programming",
+    "content":"After updating:The first popular web browser with a graphical user interface, Mosaic, was released in 1993. Accessible to non-technical people, it played a prominent role in the rapid growth of the early World Wide Web.[12] The lead developers of Mosaic then founded the Netscape corporation, which released a more polished browser, Netscape Navigator, in 1994. This quickly became the most-used.[1",
+    "dateOfCreation":"2024-05-20T09:30:31.980Z",
+    "dateOfModification":"{{$datetime iso8601}}",
+    "username":"sana",
+    "comments":[],
+    "status":true
+}
+
+###view articles
+Get http://localhost:4000/author-api/articles/sana
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNhbmEiLCJpYXQiOjE3MTY3OTYyODQsImV4cCI6MTcxNjg4MjY4NH0.Fu98ED3KTLRHufi8by3rjQx5OYeS-zX3_e64VO4gy20

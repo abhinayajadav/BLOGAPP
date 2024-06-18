@@ -1,0 +1,33 @@
+POST  http://localhost:4000/user-api/user
+Content-Type: application/json
+
+{
+    "role":"user",
+    "username":"kiranmai",
+    "password":"kiran",
+    "email":"rithu45@gmail.com"
+}
+###use login
+
+POST  http://localhost:4000/user-api/login
+Content-Type: application/json
+
+{
+    
+    "username":"kiranmai",
+    "password":"kiran"
+    
+}
+
+###
+GET  http://localhost:4000/user-api/articles
+###cmmts
+POST  http://localhost:4000/user-api/comments/$1716309902
+Content-Type: application/json
+
+{
+
+    "username":"rithu",
+    "comments":"this is the cmmt section "
+    
+}
